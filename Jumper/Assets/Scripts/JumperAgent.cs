@@ -12,15 +12,17 @@ public class JumperAgent : Agent
     private float jumpStrength = 5f;
     [SerializeField]
     private TextMeshPro scoreboard;
-
+    //[SerializeField]
+    //private Transform resetAgent = null;
+    //private Vector3 reset;
     private bool canJump = true;
-    private Rigidbody rigidbody;
+    private Rigidbody body;
     private EnvironmentJumper environment;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        body = GetComponent<Rigidbody>();
         environment = GetComponentInParent<EnvironmentJumper>();
     }
 
@@ -35,6 +37,7 @@ public class JumperAgent : Agent
         environment.ClearEnvironment();
         transform.localPosition = new Vector3(7, 0.5f, 0);
         transform.localRotation = Quaternion.Euler(0, -90, 0f);
+        //reset = new Vector3(resetAgent.position.x, resetAgent.position.y, resetAgent.position.z);
     }
 
 
@@ -61,13 +64,16 @@ public class JumperAgent : Agent
         discreteActionsOut[0] = jump;
     }
 
-
+    //private void ResetPlayer()
+    //{
+    //    this.transform.position = reset;
+    //}
 
     private void Jump()
     {
         if (canJump)
         {
-            rigidbody.AddForce(new Vector3(0, jumpStrength, 0), ForceMode.VelocityChange);
+            body.AddForce(new Vector3(0, jumpStrength, 0), ForceMode.VelocityChange);
             canJump = false;
         }
     }
@@ -84,6 +90,13 @@ public class JumperAgent : Agent
             Debug.Log("collide with obstacle");
             Destroy(collision.gameObject);
             AddReward(-1f);
+            EndEpisode();
+        }
+
+        if (collision.transform.CompareTag("Resetzone") || collision.transform.CompareTag("Wall"))
+        {
+            EndEpisode();
+            //ResetPlayer();
         }
         /*if (collision.transform.CompareTag("HiddenCollider"))
         {

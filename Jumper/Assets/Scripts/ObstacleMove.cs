@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ObstacleMove : MonoBehaviour
 {
-
+    
     [SerializeField]
     private float speed = 4f;
 
@@ -20,7 +20,7 @@ public class ObstacleMove : MonoBehaviour
 
     private void OnEnable()
     {
-        //speed = Random.Range(4, 8);
+        speed = Random.Range(4, 8);
     }
 
     // Update is called once per frame
