@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnvironmentJumper : MonoBehaviour
 {
-    public GameObject ObstaclePrefab;
+    public GameObject ObstaclePrefab1;
+    public GameObject ObstaclePrefab2;
     public GameObject Obstacles;
     public bool canSpawnObstacles = true;
     
@@ -43,7 +44,17 @@ public class EnvironmentJumper : MonoBehaviour
 
     public void SpawnObstacle()
     {
-        GameObject newObstacle = Instantiate(ObstaclePrefab.gameObject);
+        GameObject newObstacle = null;
+        int random = Random.Range(0, 3);
+
+        if (random == 2)
+        {
+            newObstacle = Instantiate(ObstaclePrefab2.gameObject);
+        }
+        else
+        {
+            newObstacle = Instantiate(ObstaclePrefab1.gameObject);
+        }
 
         newObstacle.transform.SetParent(Obstacles.transform);
         // float rx = Random.Range(-4f, 4);

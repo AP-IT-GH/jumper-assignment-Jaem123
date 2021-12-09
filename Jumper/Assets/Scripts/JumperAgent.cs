@@ -93,6 +93,13 @@ public class JumperAgent : Agent
             EndEpisode();
         }
 
+        if (collision.transform.CompareTag("BonusObstacle"))
+        {
+            Debug.Log("collide with bonus obstacle");
+            Destroy(collision.gameObject);
+            AddReward(1f);
+        }
+
         if (collision.transform.CompareTag("Resetzone") || collision.transform.CompareTag("Wall"))
         {
             EndEpisode();
