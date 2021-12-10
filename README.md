@@ -8,8 +8,7 @@ Dit verwezenlijken we door onze agent rayperception sensor 3D componenenten te g
 # Acties
 
 Op de ene of andere manier moet het algoritme leren om de agent a.h.w. te besturen. Met andere woorden, het algoritme moet een actie voorstellen. 
-Wij, de ontwikkelaar mappen de acties naar beweging. In het geval van de agent zijn er 6 mogelijke acties.
-* 1 voorwaartse beweging actie: voorwaarts bewegen
+Wij, de ontwikkelaar mappen de acties naar beweging. In het geval van de agent zijn er 2 mogelijke acties.
 * 2 spring beweging acties: springen en niet springen
 
 Springen is belangrijk omdat onze agent moet kunnen vooruit kijken waar het blauwe balk zich bevindt en wanneer het moet springen.
