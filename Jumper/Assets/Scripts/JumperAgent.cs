@@ -102,6 +102,7 @@ public class JumperAgent : Agent
 
         if (collision.transform.CompareTag("Resetzone") || collision.transform.CompareTag("Wall"))
         {
+			AddReward(-1f);
             EndEpisode();
             //ResetPlayer();
         }
@@ -110,6 +111,5 @@ public class JumperAgent : Agent
             Debug.Log("collide with hidden collider");
             AddReward(1f);
         }*/
-
     }
 }
