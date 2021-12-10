@@ -3,11 +3,11 @@ Een agent wordt getraind om eerst over een balk te springen en vervolgens alleen
 # Observaties, acties en beloning
 
 In het geval van onze agent zijn de observaties diegene die hij maakt door "vooruit" te kijken. 
-Dit verwezenlijken we door onze agent rayperception sensor 3D componenenten te geven.
+Dit verwezenlijken we door onze agent rayperception sensor 3D componenent te geven.
 
 # Acties
 
-Op de ene of andere manier moet het algoritme leren om de agent a.h.w. te besturen. Met andere woorden, het algoritme moet een actie voorstellen. 
+Op de een of andere manier moet het algoritme leren om de agent a.h.w. te besturen. Met andere woorden, het algoritme moet een actie voorstellen. 
 Wij, de ontwikkelaar mappen de acties naar beweging. In het geval van de agent zijn er 2 mogelijke acties.
 * 2 spring beweging acties: springen en niet springen
 
