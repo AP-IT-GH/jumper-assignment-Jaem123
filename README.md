@@ -18,9 +18,9 @@ Springen is belangrijk omdat onze agent moet kunnen vooruit kijken waar het blau
 
 Het beloningsmechanisme (eng: rewards, incentives) vertelt het leeralgoritme of de voorgestelde actie de agent dichter bij het einddoel van de leeroefening brengt of niet.
 
-We belonen onze agent met +.. waarde als hij over het rode balk kan springen, en vervolgens krijgt de agent een beloning van +.. als hij het blauwe balk kan aanraken. Als het blokje op het einde van het platform komt of de rode platform aanraakt stopt dan ook de episode.
+We belonen onze agent met +1 waarde als hij het blauwe balk kan aanraken en als het springt krijgt die aftraffing van -0.01. Als het blokje op het einde van het platform komt of de rode platform aanraakt stopt dan ook de episode.
 
-Verder krijgt onze agent een afstraffing van -.. als hij van het platform valt. In deze situatie stopt de episode ook onmiddellijk.
+Verder krijgt onze agent een afstraffing van -1 als hij van het platform valt of de wall aanraakt. In deze situatie stopt de episode ook onmiddellijk.
 
 # Unity omgeving aanmaken
 
